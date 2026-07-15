@@ -102,17 +102,17 @@ export default function Certificates() {
   }, []);
 
   return (
-    <div ref={triggerRef} id="certificates" className="relative bg-[#030014] overflow-hidden min-h-screen md:flex md:items-center">
+    <div ref={triggerRef} id="certificates" className="relative bg-[#000000] overflow-hidden min-h-screen md:flex md:items-center">
       {/* Background Neon Glows */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-[#ff007f]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-[#eab308]/5 blur-[120px] pointer-events-none" />
 
       {/* Container for Desktop Horizontal Scroll OR Mobile Stacked Layout */}
       <div className="w-full py-24 md:py-0 px-6 md:px-0">
         
         {/* Header container */}
         <div className="max-w-6xl mx-auto px-0 md:px-12 mb-16 md:absolute md:top-12 md:left-0 md:right-0">
-          <h2 className="font-display text-xs uppercase tracking-[0.25em] text-[#00f2fe] mb-2 font-bold flex items-center gap-2">
-            <Award className="w-4 h-4 text-[#00f2fe]" />
+          <h2 className="font-display text-xs uppercase tracking-[0.25em] text-[#eab308] mb-2 font-bold flex items-center gap-2">
+            <Award className="w-4 h-4 text-[#eab308]" />
             <span>Professional Credentials</span>
           </h2>
           <h3 className="font-display text-3xl sm:text-5xl font-extrabold text-white">
@@ -131,19 +131,19 @@ export default function Certificates() {
           {certificates.map((cert, idx) => (
             <div
               key={idx}
-              className="w-full md:w-[420px] shrink-0 glassmorphism rounded-2xl p-6 md:p-8 border-white/5 border flex flex-col justify-between hover:border-[#ff007f]/30 hover:shadow-[0_0_20px_rgba(255,0,127,0.05)] transition-all duration-300 group cursor-default select-none"
+              className="w-full md:w-[420px] shrink-0 glassmorphism rounded-2xl p-6 md:p-8 border-white/5 border flex flex-col justify-between hover:border-[#eab308]/30 hover:shadow-[0_0_20px_rgba(234,179,8,0.03)] transition-all duration-300 group cursor-default select-none"
             >
               <div>
                 {/* Header Icon */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-[#ff007f]/10 group-hover:border-[#ff007f]/20 transition-all duration-300 text-slate-350 text-slate-300">
-                    <ShieldCheck className="w-5 h-5 text-[#ff007f]" />
+                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-[#eab308]/10 group-hover:border-[#eab308]/20 transition-all duration-300 text-slate-350 text-slate-300">
+                    <ShieldCheck className="w-5 h-5 text-[#eab308]" />
                   </div>
-                  <span className="text-xs font-mono text-[#00f2fe] font-semibold">{cert.org}</span>
+                  <span className="text-xs font-mono text-[#eab308] font-semibold">{cert.org}</span>
                 </div>
 
                 {/* Info titles */}
-                <h4 className="font-display font-bold text-lg text-slate-100 mb-3 group-hover:text-[#ff007f] transition-all duration-200 leading-snug">
+                <h4 className="font-display font-bold text-lg text-slate-100 mb-3 group-hover:text-[#eab308] transition-all duration-200 leading-snug">
                   {cert.title}
                 </h4>
                 <p className="text-xs text-slate-400 leading-relaxed mb-6">
@@ -160,7 +160,7 @@ export default function Certificates() {
                 
                 <a
                   href={cert.link}
-                  className="px-4 py-2 rounded-lg bg-white/5 hover:bg-[#ff007f]/20 text-slate-300 hover:text-white border border-white/5 text-xs font-medium transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+                  className="px-4 py-2 rounded-lg bg-white/5 hover:bg-[#eab308]/20 text-slate-300 hover:text-white border border-white/5 text-xs font-medium transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
                   title="Verify Credential"
                 >
                   <span>Verify</span>

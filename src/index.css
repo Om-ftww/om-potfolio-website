@@ -3,55 +3,101 @@
 @theme {
   --font-sans: "Outfit", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
-  
-  --color-primary-blue: #00f2fe;
-  --color-primary-purple: #8a2be2;
-  --color-neon-cyan: #00ffff;
-  --color-neon-magenta: #ff007f;
-  
+
+  --color-primary-blue: #eab308;
+  --color-primary-purple: #d97706;
+  --color-neon-cyan: #facc15;
+  --color-neon-magenta: #f59e0b;
+
+  /* shadcn-compatible semantic tokens used by MinimalistHero */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(2deg);
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
 }
 
-/* Custom interactive styling rules */
+/* ─── DAY / NIGHT THEME VARIABLES ───────────────────────────── */
+
+/* Dark mode (default) */
+:root {
+  --theme-bg: #000000;
+  --theme-surface: rgba(6, 4, 15, 0.75);
+  --theme-border: rgba(255, 255, 255, 0.04);
+  --theme-text-primary: #f1f5f9;
+  --theme-text-secondary: #94a3b8;
+  --theme-text-muted: #64748b;
+  --theme-nav-link: #94a3b8;
+  --theme-card-bg: rgba(6, 4, 15, 0.75);
+  --theme-footer-border: rgba(255, 255, 255, 0.05);
+  --theme-scrollbar-track: #000000;
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+}
+
+/* Light mode — applied via [data-theme="light"] on <html> */
+[data-theme="light"] {
+  --theme-bg: #f5f3ee;
+  --theme-surface: rgba(255, 255, 255, 0.85);
+  --theme-border: rgba(0, 0, 0, 0.08);
+  --theme-text-primary: #111827;
+  --theme-text-secondary: #374151;
+  --theme-text-muted: #6b7280;
+  --theme-nav-link: #4b5563;
+  --theme-card-bg: rgba(255, 255, 255, 0.85);
+  --theme-footer-border: rgba(0, 0, 0, 0.08);
+  --theme-scrollbar-track: #f5f3ee;
+  --color-background: #f5f3ee;
+  --color-foreground: #111827;
+}
+
+/* ─── GLOBAL ─────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #030014;
-  background-image: 
-    radial-gradient(ellipse at 50% -20%, rgba(138, 43, 226, 0.18), transparent 70%),
-    radial-gradient(ellipse at 80% 50%, rgba(0, 242, 254, 0.08), transparent 60%);
+  background-color: var(--theme-bg);
+  background-image:
+    radial-gradient(ellipse at 50% -20%, rgba(234, 179, 8, 0.05), transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(245, 158, 11, 0.03), transparent 60%);
   min-height: 100vh;
   letter-spacing: -0.01em;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  color: var(--theme-text-primary);
+  font-family: var(--font-sans);
 }
 
-/* Scrollbar styles */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+[data-theme="light"] body {
+  background-image:
+    radial-gradient(ellipse at 50% -20%, rgba(234, 179, 8, 0.08), transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(245, 158, 11, 0.04), transparent 60%);
 }
-::-webkit-scrollbar-track {
-  background: #030014;
-}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+
+::-webkit-scrollbar-track { background: var(--theme-scrollbar-track); }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(138, 43, 226, 0.25);
+  background: rgba(234, 179, 8, 0.2);
   border-radius: 9999px;
-  border: 2px solid #030014;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 242, 254, 0.45);
+  border: 2px solid var(--theme-scrollbar-track);
 }
 
-/* Override #root for full page layout */
+::-webkit-scrollbar-thumb:hover { background: rgba(234, 179, 8, 0.45); }
+
+/* ─── LAYOUT ─────────────────────────────────────────────────── */
+
 #root {
   display: block;
   width: 100%;
@@ -60,66 +106,106 @@ body {
   border: none;
 }
 
-/* Premium Styling Helpers */
-.font-display {
-  font-family: var(--font-display);
-}
+/* ─── TYPOGRAPHY HELPERS ─────────────────────────────────────── */
+
+.font-display { font-family: var(--font-display); }
+
+/* ─── GLASSMORPHISM ──────────────────────────────────────────── */
 
 .glassmorphism {
-  background: rgba(6, 4, 15, 0.65);
+  background: var(--theme-surface);
   backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--theme-border);
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 .glassmorphism-light {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(12px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-.glow-blue {
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
+[data-theme="light"] .glassmorphism-light {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.glow-purple {
-  box-shadow: 0 0 25px rgba(138, 43, 226, 0.15);
-}
+/* ─── GLOW EFFECTS ───────────────────────────────────────────── */
+
+.glow-blue  { box-shadow: 0 0 25px rgba(234, 179, 8, 0.08); }
+.glow-purple { box-shadow: 0 0 25px rgba(217, 119, 6, 0.08); }
 
 .glow-button-blue:hover {
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
-  border-color: #00f2fe;
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+  border-color: #eab308;
 }
 
 .glow-button-purple:hover {
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
-  border-color: #8a2be2;
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+  border-color: #d97706;
 }
 
-/* Neo Grid Overlay */
+/* ─── GRID OVERLAY ───────────────────────────────────────────── */
+
 .grid-overlay {
   background-size: 50px 50px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to right, rgba(234, 179, 8, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(234, 179, 8, 0.01) 1px, transparent 1px);
 }
 
-/* Selection Highlight */
+/* ─── SELECTION ──────────────────────────────────────────────── */
+
 ::selection {
-  background-color: rgba(138, 43, 226, 0.3);
+  background-color: rgba(234, 179, 8, 0.25);
   color: #ffffff;
 }
 
-/* Custom transitions and scroll layout */
-.section-horizontal-scroll {
-  will-change: transform;
-}
+/* ─── SCROLL LAYOUT ──────────────────────────────────────────── */
 
-/* Floating animation modifier */
-.animate-floating {
-  animation: float 6s ease-in-out infinite;
-}
+.section-horizontal-scroll { will-change: transform; }
 
-.animate-floating-delayed {
-  animation: float 8s ease-in-out infinite;
-  animation-delay: 2s;
-}
+/* ─── FLOATING ANIMATION ─────────────────────────────────────── */
+
+.animate-floating { animation: float 6s ease-in-out infinite; }
+.animate-floating-delayed { animation: float 8s ease-in-out infinite; animation-delay: 2s; }
+
+/* ─── THEME-AWARE COMPONENT CLASSES ─────────────────────────── */
+
+/* Navbar logo text */
+.theme-nav-logo { color: var(--theme-text-primary); }
+
+/* Inactive nav links */
+.theme-nav-link { color: var(--theme-nav-link); }
+
+/* ─── LIGHT MODE COMPREHENSIVE OVERRIDES ───────────────────────── */
+
+/* All hardcoded white / near-white text → dark in light mode */
+[data-theme="light"] .text-white { color: var(--theme-text-primary) !important; }
+[data-theme="light"] .text-slate-100,
+[data-theme="light"] .text-slate-200 { color: var(--theme-text-primary) !important; }
+[data-theme="light"] .text-slate-300,
+[data-theme="light"] .text-slate-350 { color: var(--theme-text-secondary) !important; }
+[data-theme="light"] .text-slate-400,
+[data-theme="light"] .text-slate-500 { color: var(--theme-text-muted) !important; }
+[data-theme="light"] .text-zinc-500 { color: #9ca3af !important; }
+
+/* Foreground / background semantic tokens */
+[data-theme="light"] .text-foreground { color: var(--color-foreground) !important; }
+[data-theme="light"] .bg-background { background-color: var(--color-background) !important; }
+
+/* Glassmorphism dark backgrounds → light in day mode */
+[data-theme="light"] .bg-black\/20  { background-color: rgba(0,0,0,0.04) !important; }
+[data-theme="light"] .bg-black\/40  { background-color: rgba(0,0,0,0.06) !important; }
+[data-theme="light"] .bg-\[\#000000\] { background-color: var(--theme-bg) !important; }
+[data-theme="light"] .bg-\[\#000000\]\/90 { background-color: rgba(245,243,238,0.95) !important; }
+
+/* Border overrides */
+[data-theme="light"] .border-white\/5  { border-color: rgba(0,0,0,0.08) !important; }
+[data-theme="light"] .border-white\/10 { border-color: rgba(0,0,0,0.10) !important; }
+
+/* Root wrapper (set in App.jsx) */
+[data-theme="light"] .text-slate-100.font-sans { color: var(--theme-text-primary) !important; }
+
+/* Loader stays dark always */
+.z-\[99999\] { background-color: #000000 !important; }

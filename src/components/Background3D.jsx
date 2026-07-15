@@ -42,11 +42,11 @@ function ParticleCluster(props) {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
         <PointMaterial
           transparent
-          color="#00f2fe"
-          size={0.007}
+          color="#eab308"
+          size={0.006}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.8}
+          opacity={0.65}
         />
       </Points>
     </group>
@@ -83,19 +83,19 @@ function FloatingShapes() {
       {/* Dynamic drifting wireframe geometry 1 (Torus) */}
       <mesh ref={meshRef1} position={[-2.5, 0.5, -2]}>
         <torusGeometry args={[0.5, 0.15, 8, 24]} />
-        <meshBasicMaterial color="#8a2be2" wireframe transparent opacity={0.15} />
+        <meshBasicMaterial color="#d97706" wireframe transparent opacity={0.12} />
       </mesh>
 
       {/* Dynamic drifting wireframe geometry 2 (Icosahedron) */}
       <mesh ref={meshRef2} position={[2.5, -0.7, -1]}>
         <icosahedronGeometry args={[0.4, 1]} />
-        <meshBasicMaterial color="#00f2fe" wireframe transparent opacity={0.12} />
+        <meshBasicMaterial color="#eab308" wireframe transparent opacity={0.1} />
       </mesh>
 
       {/* Floating center geometry 3 (Dodecahedron) */}
       <mesh ref={meshRef3} position={[0, 0, -3]}>
         <dodecahedronGeometry args={[0.8, 0]} />
-        <meshBasicMaterial color="#4facfe" wireframe transparent opacity={0.06} />
+        <meshBasicMaterial color="#71717a" wireframe transparent opacity={0.05} />
       </mesh>
     </group>
   );
@@ -103,9 +103,9 @@ function FloatingShapes() {
 
 export default function Background3D() {
   return (
-    <div className="fixed inset-0 -z-10 w-full h-full pointer-events-none bg-[#030014]">
+    <div className="fixed inset-0 -z-10 w-full h-full pointer-events-none bg-[#000000]">
       {/* Background radial gradient mask to keep text highly legible */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_40%,#030014_95%)]" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_40%,#000000_95%)]" />
       
       <Canvas camera={{ position: [0, 0, 1] }} className="w-full h-full">
         <ambientLight intensity={0.4} />

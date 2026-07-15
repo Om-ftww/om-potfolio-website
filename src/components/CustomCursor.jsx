@@ -71,7 +71,7 @@ export default function CustomCursor() {
     <>
       {/* Small Pointer Dot */}
       <div
-        className="fixed top-0 left-0 w-2 h-2 bg-[#00f2fe] rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"
+        className="fixed top-0 left-0 w-2 h-2 bg-[#eab308] rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
@@ -87,11 +87,11 @@ export default function CustomCursor() {
           width: hovered ? "50px" : "26px",
           height: hovered ? "50px" : "26px",
           border: hovered
-            ? "1px solid rgba(138, 43, 226, 0.8)"
-            : "1px solid rgba(0, 242, 254, 0.4)",
+            ? "1px solid rgba(217, 119, 6, 0.8)"
+            : "1px solid rgba(234, 179, 8, 0.4)",
           background: hovered
-            ? "rgba(138, 43, 226, 0.1)"
-            : "rgba(0, 242, 254, 0.02)",
+            ? "rgba(217, 119, 6, 0.1)"
+            : "rgba(234, 179, 8, 0.02)",
           transform: "translate(-50%, -50%)",
         }}
       />

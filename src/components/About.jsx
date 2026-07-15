@@ -5,22 +5,22 @@ import { GraduationCap, Trophy, Globe, Activity } from "lucide-react";
 export default function About() {
   const cards = [
     {
-      icon: <GraduationCap className="w-6 h-6 text-[#00f2fe]" />,
+      icon: <GraduationCap className="w-6 h-6 text-[#eab308]" />,
       title: "Education",
-      desc: "Master of Computer Applications (MCA)",
-      subtitle: "First Class with Distinction",
+      desc: "MCA (CGPA 6.04) & BCCA (CGPA 6.69)",
+      subtitle: "Nagpur, India",
     },
     {
-      icon: <Trophy className="w-6 h-6 text-[#8a2be2]" />,
+      icon: <Trophy className="w-6 h-6 text-[#d97706]" />,
       title: "Focus Areas",
-      desc: "Data Analytics, AI Agents, BI Pipelines",
+      desc: "Power BI, Excel, SQL, Data Cleaning & Visuals",
       subtitle: "Actionable Insights",
     },
     {
-      icon: <Globe className="w-6 h-6 text-[#ff007f]" />,
+      icon: <Globe className="w-6 h-6 text-[#eab308]" />,
       title: "Core Ethos",
-      desc: "Data in, Decisions out.",
-      subtitle: "Optimizing Business Flows",
+      desc: "Raw data to decision-ready insights.",
+      subtitle: "Streamlining Reports",
     },
   ];
 
@@ -30,18 +30,24 @@ export default function About() {
       <div className="absolute right-0 top-1/3 w-80 h-80 rounded-full bg-[#8a2be2]/5 blur-[100px] pointer-events-none" />
 
       {/* Section Title */}
-      <div className="mb-16 text-left">
-        <h2 className="font-display text-xs uppercase tracking-[0.25em] text-[#00f2fe] mb-2 font-bold flex items-center gap-2">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-16 text-left"
+      >
+        <h2 className="font-display text-xs uppercase tracking-[0.25em] text-[#eab308] mb-2 font-bold flex items-center gap-2">
           <Activity className="w-4 h-4 animate-pulse" />
           <span>About Me</span>
         </h2>
         <h3 className="font-display text-3xl sm:text-5xl font-extrabold text-white">
           Deciphering Data. <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2fe] to-[#8a2be2]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#eab308] to-[#d97706]">
             Architecting Automation.
           </span>
         </h3>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
         {/* Left Side: Mock Developer Terminal */}
@@ -64,25 +70,23 @@ export default function About() {
           <div className="p-6 font-mono text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto flex-grow bg-black/20">
             <span className="text-teal-400">{"{"}</span>
             <div className="pl-6">
-              <span className="text-pink-400">"candidate"</span>: <span className="text-[#00f2fe]">"Om Narayanrao Mate"</span>,
+              <span className="text-pink-400">"candidate"</span>: <span className="text-[#eab308]">"Om Mate"</span>,
               <br />
-              <span className="text-pink-400">"academic_profile"</span>: <span className="text-[#8a2be2]">"MCA Graduate"</span>,
+              <span className="text-pink-400">"location"</span>: <span className="text-[#d97706]">"Nagpur, Maharashtra, India"</span>,
               <br />
-              <span className="text-pink-400">"domains"</span>: <span className="text-orange-400">["Data Analytics", "AI Development"]</span>,
+              <span className="text-pink-400">"academics"</span>: <span className="text-orange-400">["MCA Graduate", "BCCA Graduate"]</span>,
               <br />
               <span className="text-pink-400">"skillsets"</span>: <span className="text-purple-400">{"{"}</span>
               <div className="pl-6">
-                <span className="text-pink-400">"data_crunching"</span>: <span className="text-yellow-300">["Python", "SQL", "Pandas", "Excel"]</span>,
+                <span className="text-pink-400">"programming"</span>: <span className="text-yellow-300">["Python"]</span>,
                 <br />
-                <span className="text-pink-400">"visualizations"</span>: <span className="text-yellow-300">["Power BI", "Matplotlib"]</span>,
+                <span className="text-pink-400">"databases"</span>: <span className="text-yellow-300">["SQL (MySQL, SQL Server)"]</span>,
                 <br />
-                <span className="text-pink-400">"agentic_ai"</span>: <span className="text-yellow-300">["LangChain", "LLMs", "AI Agents"]</span>
+                <span className="text-pink-400">"analytics_tools"</span>: <span className="text-yellow-300">["Excel", "Power BI", "Power Query"]</span>
               </div>
               <span className="text-purple-400">{"}"}</span>,
               <br />
-              <span className="text-pink-400">"interests"</span>: <span className="text-emerald-400">["Data Pipelines", "Automated Recruitment Tools"]</span>,
-              <br />
-              <span className="text-pink-400">"career_vision"</span>: <span className="text-yellow-100">"Bridging the boundaries between engineering and analytics to deliver optimized business decisions."</span>
+              <span className="text-pink-400">"vision"</span>: <span className="text-yellow-100">"Turning raw, unstructured data into clear, decision-ready insights."</span>
             </div>
             <span className="text-teal-400">{"}"}</span>
           </div>
@@ -98,14 +102,10 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-slate-300 text-lg leading-relaxed">
-              As an MCA (Master of Computer Applications) graduate, I have solidified my logical foundations in 
-              software development, algorithms, and databases. My passion, however, lies at the interface of 
-              <strong className="text-[#00f2fe]"> Data Analytics</strong> and <strong className="text-[#8a2be2]">Artificial Intelligence</strong>.
+              I am a <strong className="text-[#eab308]">Data Analyst</strong> with hands-on internship experience building Power BI dashboards, writing SQL queries, and cleaning data in Excel to support business reporting.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              I specialize in analyzing complex datasets mapping indicators to business value. Further, I leverage 
-              modular LLMs, LangChain templates, and backend logic to design automated AI Hiring Agents and recruitment 
-              optimization pipelines that scale.
+              I recently completed my <strong className="text-[#d97706]">Master of Computer Applications (MCA)</strong>, which strengthened my foundation in programming, databases, and data structures. I also have project experience in Python and LLM-based automation, including building an AI resume screening tool.
             </p>
           </motion.div>
 
@@ -118,7 +118,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -4, borderColor: "rgba(0, 242, 254, 0.2)" }}
+                whileHover={{ y: -4, borderColor: "rgba(234, 179, 8, 0.2)" }}
                 className="glassmorphism p-4 rounded-xl flex flex-col gap-3 border-white/5 transition-all duration-300 select-none cursor-default"
               >
                 <div className="p-2 rounded-lg bg-white/5 w-fit shrink-0">
@@ -138,16 +138,16 @@ export default function About() {
           {/* Simple statistics meter */}
           <div className="grid grid-cols-3 gap-2 border-t border-white/5 pt-6 text-center lg:text-left">
             <div>
-              <div className="text-3xl font-bold font-display text-white">12+</div>
-              <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Analytics Projects</div>
+              <div className="text-3xl font-bold font-display text-white">1</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Internship Completed</div>
             </div>
             <div>
-              <div className="text-3xl font-bold font-display text-white">15+</div>
-              <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">AI Agents Built</div>
+              <div className="text-3xl font-bold font-display text-white">5+</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Data Tools Used</div>
             </div>
             <div>
               <div className="text-3xl font-bold font-display text-white">100%</div>
-              <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Commitment</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">Data-Driven Focus</div>
             </div>
           </div>
         </div>

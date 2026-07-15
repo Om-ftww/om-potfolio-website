@@ -28,13 +28,13 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-32 w-full max-w-6xl mx-auto px-6 relative">
-      <div className="absolute right-0 top-1/4 w-80 h-80 rounded-full bg-[#8a2be2]/5 blur-[120px] pointer-events-none animate-pulse-slow" />
-      <div className="absolute left-1/4 bottom-0 w-80 h-80 rounded-full bg-[#00f2fe]/5 blur-[120px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute right-0 top-1/4 w-80 h-80 rounded-full bg-[#eab308]/5 blur-[120px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute left-1/4 bottom-0 w-80 h-80 rounded-full bg-[#eab308]/5 blur-[120px] pointer-events-none animate-pulse-slow" />
 
-      {/* Section Header */}
+      {/* Section Title */}
       <div className="mb-20 text-center">
-        <h2 className="font-display text-xs uppercase tracking-[0.25em] text-[#00f2fe] mb-2 font-bold flex items-center justify-center gap-2">
-          <Flame className="w-4 h-4 text-[#00f2fe]" />
+        <h2 className="font-display text-xs uppercase tracking-[0.25em] text-[#eab308] mb-2 font-bold flex items-center justify-center gap-2">
+          <Flame className="w-4 h-4 text-[#eab308]" />
           <span>Contact Gateway</span>
         </h2>
         <h3 className="font-display text-3xl sm:text-5xl font-extrabold text-white">
@@ -56,24 +56,24 @@ export default function Contact() {
           {/* Contact Methods details */}
           <div className="space-y-6">
             <div className="flex items-center gap-4 group cursor-pointer select-all">
-              <div className="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:border-[#00f2fe]/30 transition-all duration-300">
-                <Mail className="w-5 h-5 text-[#00f2fe]" />
+              <div className="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:border-[#eab308]/30 transition-all duration-300">
+                <Mail className="w-5 h-5 text-[#eab308]" />
               </div>
               <div>
                 <div className="text-[10px] uppercase tracking-wider text-slate-500 font-mono">Email Drop</div>
-                <div className="text-sm font-semibold text-slate-350 text-slate-200 mt-0.5 group-hover:text-[#00f2fe] transition-colors">
+                <div className="text-sm font-semibold text-slate-350 text-slate-200 mt-0.5 group-hover:text-[#eab308] transition-colors">
                   ommate.mca@gmail.com
                 </div>
               </div>
             </div>
 
             <div className="flex items-center gap-4 group cursor-default select-none">
-              <div className="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:border-[#8a2be2]/30 transition-all duration-300">
-                <MapPin className="w-5 h-5 text-[#8a2be2]" />
+              <div className="p-4 rounded-xl bg-white/5 border border-white/5 group-hover:border-[#d97706]/30 transition-all duration-300">
+                <MapPin className="w-5 h-5 text-[#d97706]" />
               </div>
               <div>
                 <div className="text-[10px] uppercase tracking-wider text-slate-500 font-mono">Location</div>
-                <div className="text-sm font-semibold text-slate-350 text-slate-200 mt-0.5 group-hover:text-[#8a2be2] transition-colors">
+                <div className="text-sm font-semibold text-slate-350 text-slate-200 mt-0.5 group-hover:text-[#d97706] transition-colors">
                   Maharashtra, India
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Contact() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-xl border border-white/5 bg-white/3 hover:bg-[#00f2fe]/10 text-slate-400 hover:text-[#00f2fe] hover:border-[#00f2fe]/20 flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                className="w-11 h-11 rounded-xl border border-white/5 bg-white/3 hover:bg-[#eab308]/10 text-slate-400 hover:text-[#eab308] hover:border-[#eab308]/20 flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 aria-label="GitHub Profile"
               >
                 <Github className="w-5 h-5" />
@@ -97,7 +97,7 @@ export default function Contact() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-xl border border-white/5 bg-white/3 hover:bg-[#8a2be2]/10 text-slate-400 hover:text-[#8a2be2] hover:border-[#8a2be2]/20 flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                className="w-11 h-11 rounded-xl border border-white/5 bg-white/3 hover:bg-[#d97706]/10 text-slate-400 hover:text-[#d97706] hover:border-[#d97706]/20 flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
@@ -115,7 +115,7 @@ export default function Contact() {
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center justify-center py-16 text-center"
             >
-              <CheckCircle className="w-16 h-16 text-[#00f2fe] mb-6 animate-pulse" />
+              <CheckCircle className="w-16 h-16 text-[#eab308] mb-6 animate-pulse" />
               <h4 className="font-display font-bold text-2xl text-slate-100 mb-2">
                 Transmission Received
               </h4>
@@ -124,7 +124,7 @@ export default function Contact() {
               </p>
               <button
                 onClick={() => setStatus("idle")}
-                className="px-6 py-2.5 rounded-full border border-white/10 hover:border-[#00f2fe]/40 hover:bg-[#00f2fe]/5 text-xs text-[#00f2fe] uppercase tracking-wider font-semibold transition-all duration-300 clickable"
+                className="px-6 py-2.5 rounded-full border border-white/10 hover:border-[#eab308]/40 hover:bg-[#eab308]/5 text-xs text-[#eab308] uppercase tracking-wider font-semibold transition-all duration-300 clickable"
               >
                 Send Another message
               </button>
@@ -136,7 +136,7 @@ export default function Contact() {
                 {/* Name */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-wider text-slate-500 font-mono font-semibold">
-                    Name <span className="text-[#ff007f]">*</span>
+                    Name <span className="text-[#eab308]">*</span>
                   </label>
                   <input
                     type="text"
@@ -145,14 +145,14 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Enter name"
-                    className="w-full px-4 py-3 rounded-xl bg-[#030014]/65 border border-white/5 focus:border-[#00f2fe] outline-none text-slate-205 text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(0,242,254,0.15)] placeholder-zinc-700"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000000]/65 border border-white/5 focus:border-[#eab308] outline-none text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(234,179,8,0.1)] placeholder-zinc-700"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-wider text-slate-500 font-mono font-semibold">
-                    Email Address <span className="text-[#ff007f]">*</span>
+                    Email Address <span className="text-[#eab308]">*</span>
                   </label>
                   <input
                     type="email"
@@ -161,7 +161,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="name@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-[#030014]/65 border border-white/5 focus:border-[#00f2fe] outline-none text-slate-205 text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(0,242,254,0.15)] placeholder-zinc-700"
+                    className="w-full px-4 py-3 rounded-xl bg-[#000000]/65 border border-white/5 focus:border-[#eab308] outline-none text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(234,179,8,0.1)] placeholder-zinc-700"
                   />
                 </div>
               </div>
@@ -177,14 +177,14 @@ export default function Contact() {
                   value={form.subject}
                   onChange={handleChange}
                   placeholder="Inquiry Topic"
-                  className="w-full px-4 py-3 rounded-xl bg-[#030014]/65 border border-white/5 focus:border-[#00f2fe] outline-none text-slate-205 text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(0,242,254,0.15)] placeholder-zinc-700"
+                  className="w-full px-4 py-3 rounded-xl bg-[#000000]/65 border border-white/5 focus:border-[#eab308] outline-none text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(234,179,8,0.1)] placeholder-zinc-700"
                 />
               </div>
 
               {/* Message */}
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-wider text-slate-500 font-mono font-semibold">
-                  Message <span className="text-[#ff007f]">*</span>
+                  Message <span className="text-[#eab308]">*</span>
                 </label>
                 <textarea
                   name="message"
@@ -193,7 +193,7 @@ export default function Contact() {
                   required
                   rows="4"
                   placeholder="Enter message details"
-                  className="w-full px-4 py-3 rounded-xl bg-[#030014]/65 border border-white/5 focus:border-[#00f2fe] outline-none text-slate-205 text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(0,242,254,0.15)] placeholder-zinc-700 resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#000000]/65 border border-white/5 focus:border-[#eab308] outline-none text-sm text-slate-200 transition-colors focus:shadow-[0_0_15px_rgba(234,179,8,0.1)] placeholder-zinc-700 resize-none"
                 />
               </div>
 
@@ -204,12 +204,12 @@ export default function Contact() {
                 className={`w-full py-4 rounded-xl text-xs uppercase tracking-widest font-bold font-display select-none transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
                   status === "sending"
                     ? "bg-white/10 text-slate-550 border border-white/5 cursor-not-allowed"
-                    : "bg-gradient-to-r from-[#8a2be2] to-[#00f2fe] text-slate-950 hover:shadow-lg hover:shadow-[#00f2fe]/20 hover:scale-[1.01] active:scale-95"
+                    : "bg-gradient-to-r from-[#d97706] to-[#eab308] text-slate-950 hover:shadow-lg hover:shadow-[#eab308]/20 hover:scale-[1.01] active:scale-95"
                 }`}
               >
                 {status === "sending" ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-[#00f2fe] border-t-transparent rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-[#eab308] border-t-transparent rounded-full animate-spin" />
                     <span>Synchronizing Packets...</span>
                   </>
                 ) : (
