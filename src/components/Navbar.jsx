@@ -67,18 +67,7 @@ export default function Navbar() {
             : "top-6 w-[90%] max-w-5xl py-4 px-6 border-white/5"
         }`}
       >
-        {/* Brand Logo */}
-        <a
-          href="#home"
-          onClick={(e) => handleClick(e, "#home")}
-          className="flex items-center gap-2 font-display font-bold text-xl tracking-wider select-none shrink-0"
-          style={{ color: 'var(--theme-text-primary)', transition: 'color 0.4s ease' }}
-        >
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#d97706] to-[#eab308] flex items-center justify-center shadow-lg shadow-[#eab308]/20">
-            <Cpu className="w-4 h-4 text-slate-900" />
-          </span>
-          <span className="theme-nav-logo">OM.</span>
-        </a>
+        {/* Brand area removed per user request */}
 
         {/* Desktop Menu */}
         <div 
